@@ -112,7 +112,7 @@ async def attack_msg(message):
   
 async def ayuken_msg(message):
   if message.content.startswith("$AYUKEN"):
-    await message.channel.send("AAAYYUUUUUUUKKEN !!!")
+    await message.channel.send("AAAYYUUUUUUUKKEN2 !!!")
 
 
 keep_alive()
