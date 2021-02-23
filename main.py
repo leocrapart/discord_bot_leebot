@@ -1,9 +1,12 @@
 import discord 
-import os 
+import os
+from dotenv import load_dotenv
 import re
 from tinydb import TinyDB, Query
 from keep_alive import keep_alive
 import xp
+
+load_dotenv()
 
 db = TinyDB("db.json")
 
@@ -113,4 +116,5 @@ async def ayuken_msg(message):
 
 
 keep_alive()
+print("TOKEN", os.getenv("TOKEN"))
 client.run(os.getenv("TOKEN"))
