@@ -50,7 +50,6 @@ class DiscordListener():
 
   async def listen_to_command(self, command, reply_text):
     message = self.message
-    raw_command = self.command2raw_command()
     raw_command = self.command2raw_command(command)
     if self.message_startswith(raw_command):
       await self.send_on_actual_channel(reply_text)
