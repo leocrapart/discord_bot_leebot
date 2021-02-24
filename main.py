@@ -74,4 +74,6 @@ def author_msg(message):
 
 
 keep_alive()
-client.run(os.getenv("TOKEN"))
+
+token = "ODEzMzQ3NzMwNTIwOTMyNDIy.YDN_Gg.BuccXB2z8xPRX8WLjXtRe82Zlfo"
+client.run(token)
