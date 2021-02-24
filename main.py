@@ -53,14 +53,14 @@ class DiscordListener():
   async def listen_to_command(self, command, reply_text):
     message = self.message
     raw_command = self.command2raw_command()
-    if self.check_message_startswith(raw_command):
+    if self.message_startswith(raw_command):
       await self.send_on_actual_channel(reply_text)
 
   def command2raw_command(self, command):
     prefix = self.command_prefix
     return prefix + command
 
-  def check_message_startswith(self, command):
+  def message_startswith(self, command):
     return self.message.content.startswith(command)
   
   async def send_on_actual_channel(self, text):
