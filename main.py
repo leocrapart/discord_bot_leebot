@@ -7,7 +7,6 @@ import xp
 
 load_dotenv()
 
-db = TinyDB("db.json")
 
 client = discord.Client()
 
@@ -17,7 +16,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-  #await print_command_and_args(message)
   author_msg(message)
 
   discord_listener = DiscordListener(message)
@@ -63,8 +61,6 @@ class DiscordListener():
   async def send_on_actual_channel(self, text):
     await self.message.channel.send(text)
 
-  
-
 
 def author_msg(message):
   if message.author == client.user:
@@ -72,5 +68,4 @@ def author_msg(message):
 
 
 keep_alive()
-
 client.run(os.getenv("TOKEN"))
