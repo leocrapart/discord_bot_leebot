@@ -21,12 +21,52 @@ async def on_ready():
 async def on_message(message):
   await print_command_and_args(message)
   author_msg(message)
-  await hello_msg(message)
-  await attack_msg(message)
-  await add_person(message)
-  await get_leo(message)
-  await add_one_xp_to_leo(message)
-  await ayuken_msg(message)
+
+  discord_listener = DiscordListener(message)
+  await discord_listener.listen_to_commands()
+
+
+class DiscordListener():
+
+  command_prefix = "$"
+
+  def __init__(self, message):
+    self.message = message
+
+  async def listen_to_commands(self):
+    await self.listen_to_hello_command()
+    await self.listen_to_attack_command()
+    await self.listen_to_defence_command()
+  
+  async def listen_to_hello_command(self):
+    await self.listen_to_command("hello", "Hello!")
+
+  async def listen_to_attack_command(self):
+    await self.listen_to_command("attack", "High kick!")
+
+  async def listen_to_defence_command(self):
+    await self.listen_to_command("defence", "FORMATION TORTUE")
+
+  async def listen_to_ayuken_command(self):
+    await self.listen_to_command("ayuken", "AYUUUUKEN")
+
+  async def listen_to_command(self, command, reply_text):
+    message = self.message
+    raw_command = self.command2raw_command()
+    if self.check_message_startswith(raw_command):
+      await self.send_on_actual_channel(reply_text)
+
+  def command2raw_command(self, command):
+    prefix = self.command_prefix
+    return prefix + command
+
+  def check_message_startswith(self, command):
+    return self.message.content.startswith(command)
+  
+  async def send_on_actual_channel(self, text):
+    await self.message.channel.send(text)
+
+  
 
 async def print_command_and_args(message):
   command = get_command(message)
@@ -55,8 +95,6 @@ def get_args(message):
       args = None
     return args
 
-async def discord_print(text, message):
-  await message.channel.send(text)
 
 def get_command(message):
   input = message.content
@@ -101,18 +139,6 @@ async def get_leo(message):
 def author_msg(message):
   if message.author == client.user:
     return
-
-async def hello_msg(message):
-  if message.content.startswith("$hello"):
-      await message.channel.send("Hello !")
-
-async def attack_msg(message):
-  if message.content.startswith("$attack"):
-    await message.channel.send("Dragon high kick to @enbot !")
-  
-async def ayuken_msg(message):
-  if message.content.startswith("$AYUKEN"):
-    await message.channel.send("AAAYYUUUUUUUKKEN2 !!!")
 
 
 keep_alive()
