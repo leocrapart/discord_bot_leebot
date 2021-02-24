@@ -19,6 +19,17 @@ speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
 category = "main"
+description = "ASGI specs, helper code, and adapters"
+name = "asgiref"
+optional = false
+python-versions = ">=3.5"
+version = "3.3.1"
+
+[package.extras]
+tests = ["pytest", "pytest-asyncio"]
+
+[[package]]
+category = "main"
 description = "Timeout context manager for asyncio programs"
 name = "async-timeout"
 optional = false
@@ -83,6 +94,198 @@ voice = ["PyNaCl (>=1.3.0,<1.5)"]
 
 [[package]]
 category = "main"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+name = "django"
+optional = false
+python-versions = ">=3.6"
+version = "3.1.7"
+
+[package.dependencies]
+asgiref = ">=3.2.10,<4"
+pytz = "*"
+sqlparse = ">=0.2.2"
+
+[package.extras]
+argon2 = ["argon2-cffi (>=16.1.0)"]
+bcrypt = ["bcrypt"]
+
+[[package]]
+category = "main"
+description = "Django categorize content app."
+name = "django-category"
+optional = false
+python-versions = "*"
+version = "2.0.1"
+
+[package.dependencies]
+django = ">=1.11"
+django-object-tools = ">=1.9"
+
+[[package]]
+category = "main"
+description = "Django middleware to capture current request and user."
+name = "django-crum"
+optional = false
+python-versions = "*"
+version = "0.7.9"
+
+[package.dependencies]
+django = ">=1.8"
+
+[[package]]
+category = "main"
+description = "Serve different templates and static files for eg. mobi and web. Layers can be stacked to enable resource re-use."
+name = "django-layers-hr"
+optional = false
+python-versions = "*"
+version = "1.11.1"
+
+[package.dependencies]
+django = "*"
+django-crum = "*"
+
+[[package]]
+category = "main"
+description = "Django app providing view interface to django-secretballot."
+name = "django-likes"
+optional = false
+python-versions = "*"
+version = "2.0.1"
+
+[package.dependencies]
+django-secretballot = ">=1.0.0"
+
+[[package]]
+category = "main"
+description = "Django app enabling painless creation of additional admin object tools."
+name = "django-object-tools"
+optional = false
+python-versions = "*"
+version = "2.0.0"
+
+[[package]]
+category = "main"
+description = "A fork of django-pagination"
+name = "django-pagination-fork"
+optional = false
+python-versions = "*"
+version = "1.0.17"
+
+[package.extras]
+dev = ["check-manifest"]
+test = ["coverage"]
+
+[[package]]
+category = "main"
+description = "Powerful image management for the Django web framework."
+name = "django-photologue"
+optional = false
+python-versions = "*"
+version = "3.13"
+
+[package.dependencies]
+ExifRead = ">=2.1.2"
+Pillow = ">=6.0.0"
+django-sortedm2m = ">=3.0.0"
+
+[[package]]
+category = "main"
+description = "Django app allowing users to set app specific preferences through the admin interface."
+name = "django-preferences"
+optional = false
+python-versions = "*"
+version = "1.0.0"
+
+[package.dependencies]
+django = "*"
+
+[[package]]
+category = "main"
+description = "Django anonymous voting application"
+name = "django-secretballot"
+optional = false
+python-versions = "*"
+version = "1.0.0"
+
+[package.dependencies]
+django = "*"
+
+[[package]]
+category = "main"
+description = "Organize sites from the Django sites framework into groups."
+name = "django-sites-groups"
+optional = false
+python-versions = "*"
+version = "1.11.1"
+
+[package.dependencies]
+django = "*"
+
+[[package]]
+category = "main"
+description = "Drop-in replacement for django's many to many field with sorted relations."
+name = "django-sortedm2m"
+optional = false
+python-versions = "*"
+version = "3.0.2"
+
+[[package]]
+category = "main"
+description = "Drop-in replacement for Django's template fragment caching. Provides automatic cache invalidation."
+name = "django-ultracache"
+optional = false
+python-versions = "*"
+version = "2.0.0"
+
+[package.dependencies]
+PyYAML = "*"
+django = "*"
+pika = ">=0.11,<1.0"
+requests = "*"
+
+[[package]]
+category = "main"
+description = "Web APIs for Django, made easy."
+name = "djangorestframework"
+optional = false
+python-versions = ">=3.5"
+version = "3.12.2"
+
+[package.dependencies]
+django = ">=2.2"
+
+[[package]]
+category = "main"
+description = "Autogenerate API's for models. Expose core Django functionality. Validate against existing forms."
+name = "djangorestframework-extras"
+optional = false
+python-versions = "*"
+version = "0.3.0"
+
+[package.dependencies]
+djangorestframework = ">=3.8.0"
+
+[[package]]
+category = "main"
+description = "JSON Web Token based authentication for Django REST framework"
+name = "djangorestframework-jwt"
+optional = false
+python-versions = "*"
+version = "1.8.0"
+
+[package.dependencies]
+PyJWT = ">=1.4.0,<2.0.0"
+
+[[package]]
+category = "main"
+description = "Read Exif metadata from tiff and jpeg files."
+name = "exifread"
+optional = false
+python-versions = "*"
+version = "2.3.2"
+
+[[package]]
+category = "main"
 description = "A simple framework for building complex web applications."
 name = "flask"
 optional = false
@@ -132,6 +335,42 @@ i18n = ["Babel (>=0.8)"]
 
 [[package]]
 category = "main"
+description = "The Jmbo base product introduces a content type and various tools required to build Jmbo products."
+name = "jmbo"
+optional = false
+python-versions = "*"
+version = "3.0.5"
+
+[package.dependencies]
+Pillow = "*"
+django = ">=1.9"
+django-category = ">=1.9"
+django-crum = "*"
+django-layers-hr = ">=1.10.1"
+django-likes = ">=1.11"
+django-pagination-fork = ">=1.0.17"
+django-photologue = ">=3.3"
+django-preferences = "*"
+django-sites-groups = ">=1.9.1"
+django-sortedm2m = ">=1.4.0"
+django-ultracache = ">=1.10.2"
+djangorestframework-extras = ">=0.2"
+djangorestframework-jwt = "1.8.0"
+pytz = "*"
+
+[[package]]
+category = "main"
+description = "Jmbo event app."
+name = "jmbo-event"
+optional = false
+python-versions = "*"
+version = "0.0.4"
+
+[package.dependencies]
+jmbo = "*"
+
+[[package]]
+category = "main"
 description = "Safely add untrusted strings to HTML/XML markup."
 name = "markupsafe"
 optional = false
@@ -148,6 +387,39 @@ version = "5.1.0"
 
 [[package]]
 category = "main"
+description = "Pika Python AMQP Client Library"
+name = "pika"
+optional = false
+python-versions = "*"
+version = "0.13.1"
+
+[package.extras]
+tornado = ["tornado"]
+twisted = ["twisted"]
+
+[[package]]
+category = "main"
+description = "Python Imaging Library (Fork)"
+name = "pillow"
+optional = false
+python-versions = ">=3.6"
+version = "8.1.0"
+
+[[package]]
+category = "main"
+description = "JSON Web Token implementation in Python"
+name = "pyjwt"
+optional = false
+python-versions = "*"
+version = "1.7.1"
+
+[package.extras]
+crypto = ["cryptography (>=1.4)"]
+flake8 = ["flake8", "flake8-import-order", "pep8-naming"]
+test = ["pytest (>=4.0.1,<5.0.0)", "pytest-cov (>=2.6.0,<3.0.0)", "pytest-runner (>=4.2,<5.0.0)"]
+
+[[package]]
+category = "main"
 description = "Add .env support to your django/flask apps in development and deployments"
 name = "python-dotenv"
 optional = false
@@ -156,6 +428,42 @@ version = "0.15.0"
 
 [package.extras]
 cli = ["click (>=5.0)"]
+
+[[package]]
+category = "main"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
+optional = false
+python-versions = "*"
+version = "2021.1"
+
+[[package]]
+category = "main"
+description = "YAML parser and emitter for Python"
+name = "pyyaml"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+version = "5.4.1"
+
+[[package]]
+category = "main"
+description = "Python HTTP for Humans."
+name = "requests"
+optional = false
+python-versions = "*"
+version = "2.15.1"
+
+[package.extras]
+security = ["cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0.14)"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+
+[[package]]
+category = "main"
+description = "A non-validating SQL parser."
+name = "sqlparse"
+optional = false
+python-versions = ">=3.5"
+version = "0.4.1"
 
 [[package]]
 category = "main"
@@ -198,7 +506,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "c97e137156c0b461c7555e03cbcbcedde0e387a1b95225d7115379a1a8ed93a6"
+content-hash = "521045aa23e77d7763fc828efff5936bb709d7334567ececd700e1ffd66d5134"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -241,6 +549,10 @@ aiohttp = [
     {file = "aiohttp-3.7.3-cp39-cp39-win_amd64.whl", hash = "sha256:e1b95972a0ae3f248a899cdbac92ba2e01d731225f566569311043ce2226f5e7"},
     {file = "aiohttp-3.7.3.tar.gz", hash = "sha256:9c1a81af067e72261c9cbe33ea792893e83bc6aa987bfbd6fdc1e5e7b22777c4"},
 ]
+asgiref = [
+    {file = "asgiref-3.3.1-py3-none-any.whl", hash = "sha256:5ee950735509d04eb673bd7f7120f8fa1c9e2df495394992c73234d526907e17"},
+    {file = "asgiref-3.3.1.tar.gz", hash = "sha256:7162a3cb30ab0609f1a4c95938fd73e8604f63bdba516a7f7d64b83ff09478f0"},
+]
 async-timeout = [
     {file = "async-timeout-3.0.1.tar.gz", hash = "sha256:0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f"},
     {file = "async_timeout-3.0.1-py3-none-any.whl", hash = "sha256:4291ca197d287d274d0b6cb5d6f8f8f82d434ed288f962539ff18cc9012f9ea3"},
@@ -265,6 +577,71 @@ discord = [
     {file = "discord.py-1.6.0-py3-none-any.whl", hash = "sha256:3df148daf6fbcc7ab5b11042368a3cd5f7b730b62f09fb5d3cbceff59bcfbb12"},
     {file = "discord.py-1.6.0.tar.gz", hash = "sha256:ba8be99ff1b8c616f7b6dcb700460d0222b29d4c11048e74366954c465fdd05f"},
 ]
+django = [
+    {file = "Django-3.1.7-py3-none-any.whl", hash = "sha256:baf099db36ad31f970775d0be5587cc58a6256a6771a44eb795b554d45f211b8"},
+    {file = "Django-3.1.7.tar.gz", hash = "sha256:32ce792ee9b6a0cbbec340123e229ac9f765dff8c2a4ae9247a14b2ba3a365a7"},
+]
+django-category = [
+    {file = "django-category-2.0.1.tar.gz", hash = "sha256:ef1416843777ae1ac4ca7eed70efeff5d547f3f5ca5c2e967935552b52d81da4"},
+    {file = "django_category-2.0.1-py2.py3-none-any.whl", hash = "sha256:50d19b6bd655f4e4057bfc94f7e57e1e77d738e77d7172ee2f16ce5cb5aed148"},
+]
+django-crum = [
+    {file = "django-crum-0.7.9.tar.gz", hash = "sha256:65e9bc0f070a663fafc4d9e357f45fd4e6f01838b20a9e2fb7670f5706754288"},
+    {file = "django_crum-0.7.9-py2.py3-none-any.whl", hash = "sha256:037cc8b822975bb1d41cd24269b59a512cc77448fadc3f34ab9a17b229b4b471"},
+]
+django-layers-hr = [
+    {file = "django-layers-hr-1.11.1.tar.gz", hash = "sha256:e0f84b17ef91fc7227fb28663cfef9771e21b15a10c0b94ee3cca48cdbfda11d"},
+    {file = "django_layers_hr-1.11.1-py2.7.egg", hash = "sha256:1660d4c6a428ef30c40dde5ca79e5a00764a9c855877ff8a964dc6a4bb881642"},
+]
+django-likes = [
+    {file = "django-likes-2.0.1.tar.gz", hash = "sha256:7342826298f3a5fbcc12892c3f539edc8d065c59dfa0d7c65d9806244e88f408"},
+]
+django-object-tools = [
+    {file = "django-object-tools-2.0.0.tar.gz", hash = "sha256:3ce7321be9cf757c630555a21fa21b497dd676df282ae99821e40d0851532972"},
+]
+django-pagination-fork = [
+    {file = "django-pagination-fork-1.0.17.tar.gz", hash = "sha256:f11545a6e659c40addf1c4e89c6ee1f3702c54ea71af6890419b841a785cad45"},
+    {file = "django_pagination_fork-1.0.17-py2-none-any.whl", hash = "sha256:a45dbf6fa48969a313818b5ef399de32266ca3fe6d256a6a68a96550353b0256"},
+]
+django-photologue = [
+    {file = "django-photologue-3.13.tar.gz", hash = "sha256:83553abedbcc1875e467489cb982cf9c6a3dfdb9aed59bfc94fbcff46b1d1774"},
+    {file = "django_photologue-3.13-py2.py3-none-any.whl", hash = "sha256:f7ed05726003fbb95b86495c1f964d3c9bbad1675ac01cf22d3739afaaa101a7"},
+]
+django-preferences = [
+    {file = "django-preferences-1.0.0.tar.gz", hash = "sha256:1601c932da2eafb464bfc0ded6d69371d2c610870a7f27c81769a50f8da522e9"},
+]
+django-secretballot = [
+    {file = "django-secretballot-1.0.0.tar.gz", hash = "sha256:3570618acfa2ee75976cae674f91124af35e2139635d7893de2cc3d4d04fecb0"},
+    {file = "django_secretballot-1.0.0-py2.py3-none-any.whl", hash = "sha256:e182ca18ba891265865605c54ed4ea8c9515a8e8c10b6dd261904f9c6ecd64f1"},
+]
+django-sites-groups = [
+    {file = "django-sites-groups-1.11.1.tar.gz", hash = "sha256:d2ec42c836601889d071913586c1268351f57e44f87681854a8d78b524030f2d"},
+    {file = "django_sites_groups-1.11.1-py2.7.egg", hash = "sha256:f1a274fec2b4090c960237bf16e40299bb08e0e1540f92d722bd72ff7248bf1a"},
+]
+django-sortedm2m = [
+    {file = "django-sortedm2m-3.0.2.tar.gz", hash = "sha256:8acc3638b7a2587533c7776deaa2c6c035220c8f9fff85ed67858a9c6bf51e7c"},
+    {file = "django_sortedm2m-3.0.2-py2.py3-none-any.whl", hash = "sha256:091e00e12b399ffd8fc74ebf4cc0f14d0bc0e28961c4ac714ca88ae24bd96aa3"},
+]
+django-ultracache = [
+    {file = "django-ultracache-2.0.0.tar.gz", hash = "sha256:4ab6a56f4eb44ced97fa04f53ba63ef6406814d20c409281f87631ad965853d8"},
+    {file = "django_ultracache-2.0.0-py3.6.egg", hash = "sha256:9b7050c9f6feca8d3231a7da3ed10de62f418893540f42c5e2d98e7be12ae151"},
+]
+djangorestframework = [
+    {file = "djangorestframework-3.12.2-py3-none-any.whl", hash = "sha256:0209bafcb7b5010fdfec784034f059d512256424de2a0f084cb82b096d6dd6a7"},
+    {file = "djangorestframework-3.12.2.tar.gz", hash = "sha256:0898182b4737a7b584a2c73735d89816343369f259fea932d90dc78e35d8ac33"},
+]
+djangorestframework-extras = [
+    {file = "djangorestframework-extras-0.3.0.tar.gz", hash = "sha256:35f9a712707908d339a5e0b7ad1d77332a3d3de194f25faf7e473b99ea92ad71"},
+    {file = "djangorestframework_extras-0.3.0-py2.7.egg", hash = "sha256:9264d3370ae400d2436a8383bbc20011c4b86466bc165772ffce09d93f8349cf"},
+]
+djangorestframework-jwt = [
+    {file = "djangorestframework-jwt-1.8.0.tar.gz", hash = "sha256:859ae9ce200e0087b7177ffae94adc47a36ff21f5dfb4409befd39e38c87042b"},
+    {file = "djangorestframework_jwt-1.8.0-py2.py3-none-any.whl", hash = "sha256:f5718cdef7d8d8f48c790a1f2beeefe705cd4f3871e1b23fb3034c655e8c7ed7"},
+]
+exifread = [
+    {file = "ExifRead-2.3.2-py3-none-any.whl", hash = "sha256:3ef8725efdb66530b4b3cd1c4ba5d3f3b35a7872137d2c707f711971f8ebf809"},
+    {file = "ExifRead-2.3.2.tar.gz", hash = "sha256:a0f74af5040168d3883bbc980efe26d06c89f026dc86ba28eb34107662d51766"},
+]
 flask = [
     {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
     {file = "Flask-1.1.2.tar.gz", hash = "sha256:4efa1ae2d7c9865af48986de8aeb8504bf32c7f3d6fdc9353d34b21f4b127060"},
@@ -280,6 +657,15 @@ itsdangerous = [
 jinja2 = [
     {file = "Jinja2-2.11.3-py2.py3-none-any.whl", hash = "sha256:03e47ad063331dd6a3f04a43eddca8a966a26ba0c5b7207a9a9e4e08f1b29419"},
     {file = "Jinja2-2.11.3.tar.gz", hash = "sha256:a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"},
+]
+jmbo = [
+    {file = "jmbo-3.0.5-py2.7.egg", hash = "sha256:1b8341b4dc05493c6d177b669699eed13cfc53b351ab6c6a74625539bf5c5624"},
+    {file = "jmbo-3.0.5.tar.gz", hash = "sha256:524132e0e12c0ec00d86fd46897039deb8fe7543210771012ef4e321f4c62137"},
+]
+jmbo-event = [
+    {file = "jmbo-event-0.0.4.tar.gz", hash = "sha256:4d08c45f1bda4280ea91b0cfbcd63a631b18fb41b55fd6ebae5795a3aa017748"},
+    {file = "jmbo_event-0.0.4-py2.6.egg", hash = "sha256:c4a09d0b559ffab9de9facaa87241b57d27160289b4766a1d587389fe8ea8d01"},
+    {file = "jmbo_event-0.0.4-py2.7.egg", hash = "sha256:47d75dc37c2025703c0ab60ba3ec1c7dcaceae2617d1f0b2abde580aeb3c053f"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -374,9 +760,86 @@ multidict = [
     {file = "multidict-5.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:7df80d07818b385f3129180369079bd6934cf70469f99daaebfac89dca288359"},
     {file = "multidict-5.1.0.tar.gz", hash = "sha256:25b4e5f22d3a37ddf3effc0710ba692cfc792c2b9edfb9c05aefe823256e84d5"},
 ]
+pika = [
+    {file = "pika-0.13.1-py2.py3-none-any.whl", hash = "sha256:b785e0d5f74a94781bd7d020862eb137d2b56cef2a21475aadbe5bcc8ec4db15"},
+    {file = "pika-0.13.1.tar.gz", hash = "sha256:b0640085f1d6398fd47bb16a17713053e26578192821ea5d928772b8e6a28789"},
+]
+pillow = [
+    {file = "Pillow-8.1.0-cp36-cp36m-macosx_10_10_x86_64.whl", hash = "sha256:d355502dce85ade85a2511b40b4c61a128902f246504f7de29bbeec1ae27933a"},
+    {file = "Pillow-8.1.0-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:93a473b53cc6e0b3ce6bf51b1b95b7b1e7e6084be3a07e40f79b42e83503fbf2"},
+    {file = "Pillow-8.1.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:2353834b2c49b95e1313fb34edf18fca4d57446675d05298bb694bca4b194174"},
+    {file = "Pillow-8.1.0-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:1d208e670abfeb41b6143537a681299ef86e92d2a3dac299d3cd6830d5c7bded"},
+    {file = "Pillow-8.1.0-cp36-cp36m-win32.whl", hash = "sha256:dd9eef866c70d2cbbea1ae58134eaffda0d4bfea403025f4db6859724b18ab3d"},
+    {file = "Pillow-8.1.0-cp36-cp36m-win_amd64.whl", hash = "sha256:b09e10ec453de97f9a23a5aa5e30b334195e8d2ddd1ce76cc32e52ba63c8b31d"},
+    {file = "Pillow-8.1.0-cp37-cp37m-macosx_10_10_x86_64.whl", hash = "sha256:b02a0b9f332086657852b1f7cb380f6a42403a6d9c42a4c34a561aa4530d5234"},
+    {file = "Pillow-8.1.0-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:ca20739e303254287138234485579b28cb0d524401f83d5129b5ff9d606cb0a8"},
+    {file = "Pillow-8.1.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:604815c55fd92e735f9738f65dabf4edc3e79f88541c221d292faec1904a4b17"},
+    {file = "Pillow-8.1.0-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:cf6e33d92b1526190a1de904df21663c46a456758c0424e4f947ae9aa6088bf7"},
+    {file = "Pillow-8.1.0-cp37-cp37m-win32.whl", hash = "sha256:47c0d93ee9c8b181f353dbead6530b26980fe4f5485aa18be8f1fd3c3cbc685e"},
+    {file = "Pillow-8.1.0-cp37-cp37m-win_amd64.whl", hash = "sha256:96d4dc103d1a0fa6d47c6c55a47de5f5dafd5ef0114fa10c85a1fd8e0216284b"},
+    {file = "Pillow-8.1.0-cp38-cp38-macosx_10_10_x86_64.whl", hash = "sha256:7916cbc94f1c6b1301ac04510d0881b9e9feb20ae34094d3615a8a7c3db0dcc0"},
+    {file = "Pillow-8.1.0-cp38-cp38-manylinux1_i686.whl", hash = "sha256:3de6b2ee4f78c6b3d89d184ade5d8fa68af0848f9b6b6da2b9ab7943ec46971a"},
+    {file = "Pillow-8.1.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:cdbbe7dff4a677fb555a54f9bc0450f2a21a93c5ba2b44e09e54fcb72d2bd13d"},
+    {file = "Pillow-8.1.0-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:f50e7a98b0453f39000619d845be8b06e611e56ee6e8186f7f60c3b1e2f0feae"},
+    {file = "Pillow-8.1.0-cp38-cp38-win32.whl", hash = "sha256:cb192176b477d49b0a327b2a5a4979552b7a58cd42037034316b8018ac3ebb59"},
+    {file = "Pillow-8.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:6c5275bd82711cd3dcd0af8ce0bb99113ae8911fc2952805f1d012de7d600a4c"},
+    {file = "Pillow-8.1.0-cp39-cp39-macosx_10_10_x86_64.whl", hash = "sha256:165c88bc9d8dba670110c689e3cc5c71dbe4bfb984ffa7cbebf1fac9554071d6"},
+    {file = "Pillow-8.1.0-cp39-cp39-manylinux1_i686.whl", hash = "sha256:5e2fe3bb2363b862671eba632537cd3a823847db4d98be95690b7e382f3d6378"},
+    {file = "Pillow-8.1.0-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:7612520e5e1a371d77e1d1ca3a3ee6227eef00d0a9cddb4ef7ecb0b7396eddf7"},
+    {file = "Pillow-8.1.0-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:d673c4990acd016229a5c1c4ee8a9e6d8f481b27ade5fc3d95938697fa443ce0"},
+    {file = "Pillow-8.1.0-cp39-cp39-win32.whl", hash = "sha256:dc577f4cfdda354db3ae37a572428a90ffdbe4e51eda7849bf442fb803f09c9b"},
+    {file = "Pillow-8.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:22d070ca2e60c99929ef274cfced04294d2368193e935c5d6febfd8b601bf865"},
+    {file = "Pillow-8.1.0-pp36-pypy36_pp73-macosx_10_10_x86_64.whl", hash = "sha256:a3d3e086474ef12ef13d42e5f9b7bbf09d39cf6bd4940f982263d6954b13f6a9"},
+    {file = "Pillow-8.1.0-pp36-pypy36_pp73-manylinux2010_i686.whl", hash = "sha256:731ca5aabe9085160cf68b2dbef95fc1991015bc0a3a6ea46a371ab88f3d0913"},
+    {file = "Pillow-8.1.0-pp36-pypy36_pp73-manylinux2010_x86_64.whl", hash = "sha256:bba80df38cfc17f490ec651c73bb37cd896bc2400cfba27d078c2135223c1206"},
+    {file = "Pillow-8.1.0-pp37-pypy37_pp73-macosx_10_10_x86_64.whl", hash = "sha256:c3d911614b008e8a576b8e5303e3db29224b455d3d66d1b2848ba6ca83f9ece9"},
+    {file = "Pillow-8.1.0-pp37-pypy37_pp73-manylinux2010_i686.whl", hash = "sha256:39725acf2d2e9c17356e6835dccebe7a697db55f25a09207e38b835d5e1bc032"},
+    {file = "Pillow-8.1.0-pp37-pypy37_pp73-manylinux2010_x86_64.whl", hash = "sha256:81c3fa9a75d9f1afafdb916d5995633f319db09bd773cb56b8e39f1e98d90820"},
+    {file = "Pillow-8.1.0-pp37-pypy37_pp73-win32.whl", hash = "sha256:b6f00ad5ebe846cc91763b1d0c6d30a8042e02b2316e27b05de04fa6ec831ec5"},
+    {file = "Pillow-8.1.0.tar.gz", hash = "sha256:887668e792b7edbfb1d3c9d8b5d8c859269a0f0eba4dda562adb95500f60dbba"},
+]
+pyjwt = [
+    {file = "PyJWT-1.7.1-py2.py3-none-any.whl", hash = "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e"},
+    {file = "PyJWT-1.7.1.tar.gz", hash = "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"},
+]
 python-dotenv = [
     {file = "python-dotenv-0.15.0.tar.gz", hash = "sha256:587825ed60b1711daea4832cf37524dfd404325b7db5e25ebe88c495c9f807a0"},
     {file = "python_dotenv-0.15.0-py2.py3-none-any.whl", hash = "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e"},
+]
+pytz = [
+    {file = "pytz-2021.1-py2.py3-none-any.whl", hash = "sha256:eb10ce3e7736052ed3623d49975ce333bcd712c7bb19a58b9e2089d4057d0798"},
+    {file = "pytz-2021.1.tar.gz", hash = "sha256:83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da"},
+]
+pyyaml = [
+    {file = "PyYAML-5.4.1-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:3b2b1824fe7112845700f815ff6a489360226a5609b96ec2190a45e62a9fc922"},
+    {file = "PyYAML-5.4.1-cp27-cp27m-win32.whl", hash = "sha256:129def1b7c1bf22faffd67b8f3724645203b79d8f4cc81f674654d9902cb4393"},
+    {file = "PyYAML-5.4.1-cp27-cp27m-win_amd64.whl", hash = "sha256:4465124ef1b18d9ace298060f4eccc64b0850899ac4ac53294547536533800c8"},
+    {file = "PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:bb4191dfc9306777bc594117aee052446b3fa88737cd13b7188d0e7aa8162185"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:6c78645d400265a062508ae399b60b8c167bf003db364ecb26dcab2bda048253"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:4e0583d24c881e14342eaf4ec5fbc97f934b999a6828693a99157fde912540cc"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-win32.whl", hash = "sha256:3bd0e463264cf257d1ffd2e40223b197271046d09dadf73a0fe82b9c1fc385a5"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-win_amd64.whl", hash = "sha256:e4fac90784481d221a8e4b1162afa7c47ed953be40d31ab4629ae917510051df"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:5accb17103e43963b80e6f837831f38d314a0495500067cb25afab2e8d7a4018"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:e1d4970ea66be07ae37a3c2e48b5ec63f7ba6804bdddfdbd3cfd954d25a82e63"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-win32.whl", hash = "sha256:dd5de0646207f053eb0d6c74ae45ba98c3395a571a2891858e87df7c9b9bd51b"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-win_amd64.whl", hash = "sha256:08682f6b72c722394747bddaf0aa62277e02557c0fd1c42cb853016a38f8dedf"},
+    {file = "PyYAML-5.4.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d2d9808ea7b4af864f35ea216be506ecec180628aced0704e34aca0b040ffe46"},
+    {file = "PyYAML-5.4.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:8c1be557ee92a20f184922c7b6424e8ab6691788e6d86137c5d93c1a6ec1b8fb"},
+    {file = "PyYAML-5.4.1-cp38-cp38-win32.whl", hash = "sha256:fa5ae20527d8e831e8230cbffd9f8fe952815b2b7dae6ffec25318803a7528fc"},
+    {file = "PyYAML-5.4.1-cp38-cp38-win_amd64.whl", hash = "sha256:0f5f5786c0e09baddcd8b4b45f20a7b5d61a7e7e99846e3c799b05c7c53fa696"},
+    {file = "PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:294db365efa064d00b8d1ef65d8ea2c3426ac366c0c4368d930bf1c5fb497f77"},
+    {file = "PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:74c1485f7707cf707a7aef42ef6322b8f97921bd89be2ab6317fd782c2d53183"},
+    {file = "PyYAML-5.4.1-cp39-cp39-win32.whl", hash = "sha256:49d4cdd9065b9b6e206d0595fee27a96b5dd22618e7520c33204a4a3239d5b10"},
+    {file = "PyYAML-5.4.1-cp39-cp39-win_amd64.whl", hash = "sha256:c20cfa2d49991c8b4147af39859b167664f2ad4561704ee74c1de03318e898db"},
+    {file = "PyYAML-5.4.1.tar.gz", hash = "sha256:607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"},
+]
+requests = [
+    {file = "requests-2.15.1-py2.py3-none-any.whl", hash = "sha256:ff753b2196cd18b1bbeddc9dcd5c864056599f7a7d9a4fb5677e723efa2b7fb9"},
+    {file = "requests-2.15.1.tar.gz", hash = "sha256:e5659b9315a0610505e050bb7190bf6fa2ccee1ac295f2b760ef9d8a03ebbb2e"},
+]
+sqlparse = [
+    {file = "sqlparse-0.4.1-py3-none-any.whl", hash = "sha256:017cde379adbd6a1f15a61873f43e8274179378e95ef3fede90b5aa64d304ed0"},
+    {file = "sqlparse-0.4.1.tar.gz", hash = "sha256:0f91fd2e829c44362cbcfab3e9ae12e22badaa8a29ad5ff599f9ec109f0454e8"},
 ]
 tinydb = [
     {file = "tinydb-4.4.0-py3-none-any.whl", hash = "sha256:30b0f718ebb288e42d2f69f3e1b18928739f25153e6b5308a234e95c1673de71"},
